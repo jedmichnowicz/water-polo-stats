@@ -1,6 +1,13 @@
 ## Example XLS
 https://docs.google.com/spreadsheets/d/1S3jLu67dDTn4aK-1NJQ8jvZoNrWl_VPM3NJs_BeDmK0/edit?usp=sharing
 
+## Data Source Example
+Final scores from this spreadsheet
+https://onedrive.live.com/view.aspx?resid=6F253EF3AFCFE1C8%2163312&authkey=!ANRJq9q9sVrwTVo
+
+Final placing from
+https://www.kahunaevents.org/cgi-bin/start.cgi/NJO_2024/2024_njo_divselect.htm
+
 ## Usage
 ```
 ./water-polo-stats.sh scores.csv placings.csv
