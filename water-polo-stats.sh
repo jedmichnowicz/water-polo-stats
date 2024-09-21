@@ -1,5 +1,31 @@
 #!/bin/bash
 
+function usage(){
+    echo "USAGE:"
+    echo "$0 <scores.csv> <placings.csv>"
+    echo ""
+    echo "Sample format"
+    echo "scores.csv"
+    echo "NEWPORT BEACH BLUE,6,DIABLO A,2"
+    echo "SOCAL,5,SOUTH COAST RED,6"
+    echo "PUNAHOU,7,CLOVIS,13"
+    echo "LAMORINDA B,5.2,ARROYO GRANDE,5.1"
+    echo ""
+    echo "placings.csv"
+    echo "P_1,W192-NEWPORT BEACH BLUE"
+    echo "P_2,L192-PATRIOT NAVY"
+    echo "P_3,W191-DIABLO A"
+    echo "P_4,L191-STANFORD A"
+    echo "[...]"
+    echo "G_47,PRAETORIAN"
+    echo "G_48,PUNAHOU"
+}
+
+
+if [ -z $2 ]; then
+    usage
+    exit 1;
+fi
 echo "TEAM,LEVEL,PLACING,GOALS FOR PER GAME,GOALS AGAINST AGAINST PER GAME,POINT DELTA,SCHEDULE STRENGTH,WINS,LOSSES,TIES,TIE WINS,TIE LOSSES"
 
 IFS='
