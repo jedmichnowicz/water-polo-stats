@@ -32,8 +32,8 @@ IFS='
 '
 TEAMS=""
 for i in $(cat $1); do
-    WHITE=$(echo $i | awk -F',' '{print $1}' | sed -e "s|^[0-9]*-||")
-    DARK=$(echo $i | awk -F',' '{print $3}' | sed -e "s|^[0-9]*-||")
+    WHITE=$(echo $i | awk -F',' '{print $1}' | sed 's|.*- ||')
+    DARK=$(echo $i | awk -F',' '{print $3}' | sed 's|.*- ||')
     TEAMS="$WHITE
 $DARK
 $TEAMS"
@@ -54,8 +54,8 @@ for TEAM in $(echo "$TEAMS" | sort -u); do
     TIE_LOSSES=0
 
     for SCORE in $(cat $1 | grep "$TEAM"); do
-        WHITE=$(echo "$SCORE" | awk -F',' '{print $1}' | sed -e "s|^[0-9]*-||")
-        DARK=$(echo "$SCORE" | awk -F',' '{print $3}' | sed -e "s|^[0-9]*-||")    
+        WHITE=$(echo "$SCORE" | awk -F',' '{print $1}' | sed 's|.*- ||')
+        DARK=$(echo "$SCORE" | awk -F',' '{print $3}' | sed 's|.*- ||')
         WHITE_SCORE=$(echo "$SCORE" | awk -F',' '{print $2}' | sed -e 's|\..*||')
         DARK_SCORE=$(echo "$SCORE" | awk -F',' '{print $4}' | sed -e 's|\..*||')        
         GAME_COUNT=$((1 + $GAME_COUNT))
